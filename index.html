@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(#ff9a9e, #fad0c4);
+      font-family: 'Arial', cursive;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+    img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin: 10px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+    #no {
+      background: #444;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Heyyy ❤️</h1>
+<p>I have something to ask you…</p>
+
+<img id="slideshow" src="photo1.jpg">
+
+  <script>
+  let photos = ["photo1.jpg", "photo2.jpg", "photo3.jpg"];
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % photos.length;
+    document.getElementById("slideshow").src = photos[index];
+  }, 2000); // 2 seconds
+  </script>
+
+  
+#slideshow {
+  transition: opacity 0.5s ease-in-out;
+}
+<h2>Do you like us together? 🥺</h2>
+
+<button id="yes" onclick="goYes()">YES 💖</button>
+<button id="no" onmouseover="moveNo()">NO 😒</button>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function moveNo() {
+    const no = document.getElementById("no");
+    no.style.left = Math.random() * 80 + "vw";
+    no.style.top = Math.random() * 80 + "vh";
+  }
+
+  function goYes() {
+    window.location.href = "love.html";
+  }
+</script>
+
+  <h2 id="loveText">I love your eyes 👀❤️</h2>
+<img id="slideshow" src="photo1.jpg">
+
+  #loveText {
+  font-size: 24px;
+  margin: 20px;
+  animation: fade 2s infinite;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+  <script>
+  let photos = ["photo1.jpg", "photo2.jpg", "photo3.jpg"];
+  let texts = [
+    "I love your eyes 👀❤️",
+    "I love your smile 😊💖",
+    "I love your voice 🎶🥹",
+    "I love your name…",
+    "I love your everything 💘"
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % photos.length;
+    document.getElementById("slideshow").src = photos[index];
+    document.getElementById("loveText").innerText = texts[index];
+  }, 2500); // 2.5 sec
+  </script>
+
+</body>
+</html>
